@@ -5,13 +5,13 @@ import random
 
 # Initalisation
 
+
 secret_number = random.randint(1,100)
 guess_count = 1
 test = 1
-print (secret_number)
 
 # Clear the terminal screen
-def set_up_screen():
+def set_up():
     os.system('clear')
     print("Guess the Number")
     print("----------------")
@@ -22,7 +22,6 @@ def set_up_screen():
 
 # Function to check guess against target number
 def guess_check(guess, secret_number, guess_count):
-    print(secret_number)
     if guess == secret_number:
         print('Great, you took ' + str(guess_count) + ' attempts')
         print()
@@ -45,17 +44,18 @@ def have_a_guess():
     
 
 
-set_up_screen()
+
+set_up()
 
 
 guess = have_a_guess()
 test = guess_check(guess, secret_number, guess_count)
 
 while test != 1:
+    guess_count = guess_count + 1
     guess = have_a_guess()
     test = guess_check(guess, secret_number, guess_count)
-    print(test)
-    guess_count =+1
+    
 
     
  
