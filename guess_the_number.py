@@ -6,12 +6,11 @@ import random
 # Initalisation
 
 
-secret_number = random.randint(1,100)
-guess_count = 1
-test = 1
+
 
 # Clear the terminal screen
 def set_up():
+
     os.system('clear')
     print("Guess the Number")
     print("----------------")
@@ -42,23 +41,22 @@ def have_a_guess():
     return guess
     
     
-
-
-
-set_up()
-
-
-guess = have_a_guess()
-test = guess_check(guess, secret_number, guess_count)
-
-while test != 1:
-    guess_count = guess_count + 1
+def run():
+    secret_number = random.randint(1,100)
+    guess_count = 1
+    test = 1
+    set_up()
     guess = have_a_guess()
     test = guess_check(guess, secret_number, guess_count)
+
+    while test != 1:
+        guess_count = guess_count + 1
+        guess = have_a_guess()
+        test = guess_check(guess, secret_number, guess_count)
     
 
     
- 
+run()
         
     
     
