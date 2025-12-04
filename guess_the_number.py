@@ -3,12 +3,7 @@
 import os
 import random
 
-# Initalisation
-
-
-
-
-# Clear the terminal screen
+# Clear the terminal screen and set upß
 def set_up():
 
     os.system('clear')
